@@ -1,0 +1,38 @@
+[cols="<,>,>,>,>"]
+|===
+| Command 
+| Mean [ms] 
+| Min [ms] 
+| Max [ms] 
+| Relative 
+
+| `pdu --no-sort tmp.sample` 
+| 90.9 ± 0.6 
+| 89.9 
+| 93.1 
+| 1.00 
+
+| `du --count-links tmp.sample` 
+| 203.6 ± 0.6 
+| 202.8 
+| 205.0 
+| 2.24 ± 0.02 
+
+| `dua --count-hard-links tmp.sample` 
+| 244.0 ± 11.0 
+| 227.1 
+| 263.0 
+| 2.69 ± 0.12 
+
+| `ncdu -o /dev/stdout -0 tmp.sample` 
+| 214.3 ± 0.9 
+| 212.9 
+| 215.8 
+| 2.36 ± 0.02 
+
+| `gdu --non-interactive --no-progress tmp.sample` 
+| 175.8 ± 3.3 
+| 170.4 
+| 182.0 
+| 1.94 ± 0.04 
+|===

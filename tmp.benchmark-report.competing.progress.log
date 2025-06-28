@@ -1,0 +1,16 @@
+Benchmark 1: pdu --progress tmp.sample
+  Time (mean ± σ):     104.7 ms ±   0.2 ms    [User: 63.0 ms, System: 290.2 ms]
+  Range (min … max):   104.3 ms … 105.1 ms    28 runs
+ 
+Benchmark 2: ncdu -o /dev/stdout -1 tmp.sample
+  Time (mean ± σ):     213.5 ms ±   1.0 ms    [User: 32.5 ms, System: 180.9 ms]
+  Range (min … max):   211.7 ms … 214.9 ms    13 runs
+ 
+Benchmark 3: gdu --non-interactive tmp.sample
+  Time (mean ± σ):     171.4 ms ±   4.2 ms    [User: 198.6 ms, System: 382.3 ms]
+  Range (min … max):   164.7 ms … 179.4 ms    16 runs
+ 
+Summary
+  pdu --progress tmp.sample ran
+    1.64 ± 0.04 times faster than gdu --non-interactive tmp.sample
+    2.04 ± 0.01 times faster than ncdu -o /dev/stdout -1 tmp.sample

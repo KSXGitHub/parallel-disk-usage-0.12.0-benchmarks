@@ -1,0 +1,21 @@
+Benchmark 1: pdu --max-depth=1 tmp.sample
+  Time (mean ± σ):      87.0 ms ±   0.4 ms    [User: 56.9 ms, System: 283.3 ms]
+  Range (min … max):    86.5 ms …  88.6 ms    33 runs
+ 
+Benchmark 2: dutree --summary tmp.sample
+  Time (mean ± σ):     388.6 ms ±   1.7 ms    [User: 35.9 ms, System: 352.5 ms]
+  Range (min … max):   386.9 ms … 392.1 ms    10 runs
+ 
+Benchmark 3: dua --count-hard-links tmp.sample
+  Time (mean ± σ):     251.6 ms ±  11.5 ms    [User: 256.1 ms, System: 650.3 ms]
+  Range (min … max):   234.4 ms … 274.6 ms    10 runs
+ 
+Benchmark 4: du --count-links --summarize tmp.sample
+  Time (mean ± σ):     199.9 ms ±   1.5 ms    [User: 21.6 ms, System: 178.2 ms]
+  Range (min … max):   197.6 ms … 203.6 ms    14 runs
+ 
+Summary
+  pdu --max-depth=1 tmp.sample ran
+    2.30 ± 0.02 times faster than du --count-links --summarize tmp.sample
+    2.89 ± 0.13 times faster than dua --count-hard-links tmp.sample
+    4.46 ± 0.03 times faster than dutree --summary tmp.sample

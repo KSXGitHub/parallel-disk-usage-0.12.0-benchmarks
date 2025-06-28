@@ -1,0 +1,33 @@
+Benchmark 1: pdu --quantity=apparent-size tmp.sample
+  Time (mean ± σ):      99.1 ms ±  11.3 ms    [User: 60.2 ms, System: 292.2 ms]
+  Range (min … max):    89.9 ms … 126.8 ms    32 runs
+ 
+Benchmark 2: dust --apparent-size tmp.sample
+  Time (mean ± σ):     106.7 ms ±   1.1 ms    [User: 73.6 ms, System: 312.0 ms]
+  Range (min … max):   105.0 ms … 109.8 ms    27 runs
+ 
+Benchmark 3: dua --count-hard-links --apparent-size tmp.sample
+  Time (mean ± σ):     303.9 ms ±  31.0 ms    [User: 229.1 ms, System: 803.5 ms]
+  Range (min … max):   279.4 ms … 376.1 ms    10 runs
+ 
+Benchmark 4: ncdu -o /dev/stdout -0 tmp.sample
+  Time (mean ± σ):     213.8 ms ±   1.1 ms    [User: 33.8 ms, System: 179.9 ms]
+  Range (min … max):   211.5 ms … 215.7 ms    13 runs
+ 
+Benchmark 5: gdu --show-apparent-size --non-interactive --no-progress tmp.sample
+  Time (mean ± σ):     173.6 ms ±   7.8 ms    [User: 194.5 ms, System: 388.7 ms]
+  Range (min … max):   165.9 ms … 200.8 ms    16 runs
+ 
+  Warning: Statistical outliers were detected. Consider re-running this benchmark on a quiet system without any interferences from other programs. It might help to use the '--warmup' or '--prepare' options.
+ 
+Benchmark 6: du --count-links --apparent-size tmp.sample
+  Time (mean ± σ):     204.0 ms ±   0.8 ms    [User: 22.3 ms, System: 181.7 ms]
+  Range (min … max):   202.6 ms … 205.5 ms    14 runs
+ 
+Summary
+  pdu --quantity=apparent-size tmp.sample ran
+    1.08 ± 0.12 times faster than dust --apparent-size tmp.sample
+    1.75 ± 0.21 times faster than gdu --show-apparent-size --non-interactive --no-progress tmp.sample
+    2.06 ± 0.24 times faster than du --count-links --apparent-size tmp.sample
+    2.16 ± 0.25 times faster than ncdu -o /dev/stdout -0 tmp.sample
+    3.07 ± 0.47 times faster than dua --count-hard-links --apparent-size tmp.sample

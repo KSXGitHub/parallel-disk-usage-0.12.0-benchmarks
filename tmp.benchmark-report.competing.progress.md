@@ -1,0 +1,5 @@
+| Command | Mean [ms] | Min [ms] | Max [ms] | Relative |
+|:---|---:|---:|---:|---:|
+| `pdu --progress tmp.sample` | 104.7 ± 0.2 | 104.3 | 105.1 | 1.00 |
+| `ncdu -o /dev/stdout -1 tmp.sample` | 213.5 ± 1.0 | 211.7 | 214.9 | 2.04 ± 0.01 |
+| `gdu --non-interactive tmp.sample` | 171.4 ± 4.2 | 164.7 | 179.4 | 1.64 ± 0.04 |
